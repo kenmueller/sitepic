@@ -4,7 +4,10 @@ import puppeteer from 'puppeteer'
 const PORT = process.env.PORT ?? '3000'
 
 const app = express()
-const browserPromise = puppeteer.launch({ args: ['--no-sandbox'] })
+
+const browserPromise = puppeteer.launch({
+	args: ['--no-sandbox', '--disable-setuid-sandbox']
+})
 
 const validWaitParameters = [
 	'domcontentloaded',
