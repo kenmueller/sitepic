@@ -20,6 +20,8 @@ const maxWidth = 1920
 const maxHeight = 1080
 
 app.get('/', async (req, res) => {
+	res.header('access-control-allow-origin', '*')
+
 	const { url, wait, width: _width, height: _height } = req.query
 
 	try {
